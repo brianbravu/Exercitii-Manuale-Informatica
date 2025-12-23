@@ -1,0 +1,71 @@
+# =======================================================
+# 1. Visual Studio / MSVC Build Folders
+# =======================================================
+# Ignore the build output directories for all sub-projects
+# MSVC defaults are usually "Debug" and "Release"
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+out/
+
+# =======================================================
+# 2. Visual Studio IDE & Cache Files
+# =======================================================
+# The hidden .vs folder contains user preferences and headers
+.vs/
+# Solution user options (your personal open file list, etc.)
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# =======================================================
+# 3. C/C++ Compilation Artifacts (MSVC Specific)
+# =======================================================
+# Object files
+*.obj
+*.o
+
+# Linker state & debug databases (Important to ignore!)
+*.pdb
+*.idb
+*.ilk
+*.ipch
+
+# Incremental build logs
+*.tlog
+*.log
+
+# Precompiled Headers
+*.pch
+*.gch
+
+# Compiled executables & libraries
+*.exe
+*.dll
+*.lib
+*.sbr
+*.bsc
+
+# =======================================================
+# 4. Editors (VS Code / Other)
+# =======================================================
+# If you ever open this in VS Code
+.vscode/
+*.code-workspace
+
+# =======================================================
+# 5. OS Generated Files
+# =======================================================
+.DS_Store
+Thumbs.db
+
+# =======================================================
+# 6. Large Files
+# =======================================================
+*.mp4
+*.zip

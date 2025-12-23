@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33920.266
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Legatura dintre pointeri si tablouri", "Legatura dintre pointeri si tablouri.vcxproj", "{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Debug|x64.ActiveCfg = Debug|x64
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Debug|x64.Build.0 = Debug|x64
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Debug|x86.ActiveCfg = Debug|Win32
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Debug|x86.Build.0 = Debug|Win32
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Release|x64.ActiveCfg = Release|x64
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Release|x64.Build.0 = Release|x64
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Release|x86.ActiveCfg = Release|Win32
+		{0DCA7728-E9D5-4F7A-8A1F-D17AAF253FBC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D83A91EE-8DBD-49F6-AB4F-0786C7864FC5}
+	EndGlobalSection
+EndGlobal

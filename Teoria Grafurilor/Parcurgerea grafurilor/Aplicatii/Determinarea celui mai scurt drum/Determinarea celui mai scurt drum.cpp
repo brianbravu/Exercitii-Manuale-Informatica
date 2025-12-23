@@ -1,0 +1,87 @@
+// Determinarea celui mai scurt drum.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+#define NMax 101
+int n, viz[NMax], C[NMax], y;
+int* A[NMax];
+
+void Citire_graf_orientat()
+{
+    FILE* fin;
+    errno_t err;
+    err = fopen_s(&fin, "grafo.in", "r");
+    int x, y, m, i;
+    fscanf_s(fin, "%d %d", &n, &m);
+    // Aloc memorie pentru gradul fiecarui varf
+    for (i = 1; i <= n; i++)
+    {
+        A[i] = (int*)realloc(A[i], sizeof(int));
+        A[i][0] = 0;
+    }
+    for (i = 0; i < m; i++)
+    {
+        fscanf_s(fin, "%d %d", &x, &y);
+        A[x][0]++; // Incrementam gradul varfului x
+        // Realocam memorie pentru lista de adiacenta a lui x
+        A[x] = (int*)realloc(A[x], (A[x][0] + 1) * sizeof(int));
+        // Memoram pe y in lista de adiacenta a lui x
+        A[x][A[x][0]] = y;
+    }
+}
+
+void BFS(int x)
+{
+    int i, prim, ultim;
+    viz[x] = -1; // Vizitam varful de start
+    C[0] = x; prim = ultim = 0; // Initializam coada cu varful de start
+    while (prim <= ultim && !viz[y])
+        // Cat timp coada nu este vida si nu am vizitat varful y
+    {
+        x = C[prim++]; // Extragem un element din coada
+        // Parcurgem lista de adiacenta a varfului x
+        for (i = 1; i <= A[x][0]; i++)
+            if (!viz[A[x][i]])
+                // A[x][i] este un vecin nevizitat al lui x
+            {
+                viz[A[x][i]] = x; // Il vizitam
+                C[++ultim] = A[x][i]; // Il plasam in coada
+            }
+    }
+}
+
+void Afisare_Drum(int x)
+{
+    int poz = 0, i, drum[NMax];
+    if (!viz[y])
+        printf_s("Varful %d nu este accesibil din %d\n", y, x);
+    else
+    {
+        drum[0] = y;
+        while (viz[drum[poz]] != -1)
+            drum[++poz] = viz[drum[poz - 1]];
+        for (i = poz; i >= 0; i--)
+            printf_s("%d ", drum[i]);
+        printf_s("\n");
+    }
+}
+
+int main()
+{
+    cout << "y = "; cin >> y;
+    Citire_graf_orientat();
+    BFS(3);
+    Afisare_Drum(3);
+}
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
